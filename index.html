@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./vendor/fontawesome/css/brands.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./vendor/owl/css/owl.css">
+    <link rel="stylesheet" href="./vendor/jquery-ui/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./vendor/jquery-ui/css/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     
 
@@ -34,8 +36,8 @@
                       <i class="fa-solid fa-house"></i> Início
                     </a>
                   </li>
-                  <li class="nav-item mx-3"><a class="nav-link" href="#"><i class="fa-regular fa-image"></i>Produtos</a></li>
-                  <li class="nav-item mx-3"><a class="nav-link" href="#"><i class="fa-solid fa-comment"></i>Fale conosco</a></li>
+                  <li class="nav-item mx-3"><a class="nav-link nav-modal-open" href="#" rel="produtos"><i class="fa-regular fa-image"></i>Produtos</a></li>
+                  <li class="nav-item mx-3"><a class="nav-link nav-modal-open" href="#" rel="contato"><i class="fa-solid fa-comment"></i>Fale conosco</a></li>
               </ul>
           </div>
         </nav>
@@ -274,11 +276,107 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal Dinâmico -->
+
+  <div class="modal" id="modal-dinamico" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Título</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Conteúdo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divs ocultas com conteúdo a ser chamado via JQuery-->
+
+  <div id="contato" class="visually-hidden">
+
+    <form action="post" class="form">
+
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" name="nome" id="nome" title="Insira seu nome completo" class="form-control" placeholder="Digite seu nome" aria-describedby="helpNome">
+          <small id="helpNome" class="text-muted visually-hidden">
+              Digite um nome válido
+          </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu e-mail" aria-describedby="helpEmail">
+            <small id="helpEmail" class="text-muted visually-hidden">
+                Digite um e-mail válido
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Data</label>
+            <input type="text" name="date" id="date" class="form-control datepicker campo" placeholder="Digite a data" aria-describedby="helpDate">
+            <small id="helpDate" class="text-muted visually-hidden">
+                Digite uma data válida
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="time" class="form-label">Hora</label>
+            <input type="text" name="time" id="time" class="form-control campo" placeholder="Digite a hora" aria-describedby="helpHora">
+            <small id="helpHora" class="text-muted visually-hidden">
+                Digite uma hora válida
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="text" name="cep" id="cep" class="form-control cep campo" placeholder="Digite seu CEP" aria-describedby="helpCEP">
+            <small id="helpCEP" class="text-muted visually-hidden">
+                Digite um CEP válido
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="celular" class="form-label">Celular</label>
+            <input type="text" name="celular" id="celular" class="form-control campo" placeholder="Digite seu Celular" aria-describedby="helpCelular">
+            <small id="helpCelular" class="text-muted visually-hidden">
+                Digite um celular válido
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" name="cpf" id="cpf" class="form-control campo" placeholder="Digite seu CPF" aria-describedby="helpCPF">
+            <small id="helpCPF" class="text-muted visually-hidden">
+                Digite um CPF válido
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+    </form>
+
+</div>
+
+
+<div id="produtos" class="visually-hidden">
+
+    <p>A OMNI Brindes fornece brindes de alta qualidade nacionais e importados, personalizados para presentear e fidelizar seu cliente.</p>
+      
+    <p>Desenvolve também projetos especiais em parceria com o cliente, buscando atender necessidades específicas através de brindes e prêmios exclusivos, valorizando a marca e o relacionamento com o cliente.</p>
+
+</div>
        
 
     <script src="./vendor/jquery/jquery-3.6.1.min.js"></script>
     <script src="./vendor/owl/js/owl.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/jquery-mask/jquery.mask.min.js"></script>
+    <script src="./vendor/jquery-ui/js/jquery-ui.min.js"></script>
     <script src="./js/custom.js"></script>
 
 
